@@ -1,0 +1,27 @@
+:root{--bg:#0a0a0c;--panel:#14141a;--line:#26262f;--text:#e8e8ee;--accent:#7c5cff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,sans-serif}
+input,button{font:inherit}input{width:100%;padding:12px;margin:6px 0;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--text)}
+button{padding:12px 16px;border:0;border-radius:10px;background:var(--accent);color:#fff;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}
+.card{max-width:380px;margin:12vh auto;padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.err{color:#ff7b7b;font-size:14px}.ok{color:#6ee7a0;font-size:14px}
+.shell{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+nav.side{padding:16px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:100vh}
+nav.side a,nav.side button{display:block;padding:10px 12px;border-radius:10px;color:var(--text);text-decoration:none;background:none;text-align:left;width:100%}
+nav.side a:hover,nav.side button:hover{background:var(--panel)}
+main.page{padding:20px;max-width:1000px;width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.box b{font-size:26px;display:block}.muted{color:#8b8b99;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.ghost{background:#26262f}.danger{background:#7a2230}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chat{display:grid;grid-template-columns:220px 1fr;gap:12px;height:calc(100vh - 40px)}
+.msgs{overflow:auto;display:flex;flex-direction:column;gap:10px;padding:4px}
+.m{padding:10px 12px;border-radius:12px;white-space:pre-wrap;word-break:break-word;max-width:90%}
+.m.user{background:#2a2250;align-self:flex-end}.m.assistant{background:var(--panel);border:1px solid var(--line)}
+@media(max-width:760px){
+ .shell{grid-template-columns:1fr;padding-bottom:64px}
+ nav.side{position:fixed;bottom:0;left:0;right:0;height:auto;flex-direction:row;border:0;border-top:1px solid var(--line);background:var(--bg);z-index:5;padding:6px;overflow-x:auto}
+ nav.side a,nav.side button{padding:10px;font-size:13px;white-space:nowrap;width:auto}
+ .chat{grid-template-columns:1fr;height:auto}
+}
