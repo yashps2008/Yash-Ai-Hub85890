@@ -1,7 +1,7 @@
 import { admin } from "./supabase/admin";
 import { decrypt } from "./crypto";
 
-const GRAPH = "https://graph.instagram.com/v23.0";
+const GRAPH = "https://graph.facebook.com/v27.0";
 
 export function matches(text: string, kw: string, type: string, caseSensitive: boolean) {
   const t = caseSensitive ? text : text.toLowerCase();
